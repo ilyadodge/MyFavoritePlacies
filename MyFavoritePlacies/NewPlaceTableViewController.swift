@@ -9,7 +9,6 @@ import UIKit
 
 class NewPlaceTableViewController: UITableViewController {
     
-    var newPlace: Places?
     var imageChaged = false
     
     @IBOutlet weak var placeImage: UIImageView!
@@ -61,6 +60,8 @@ class NewPlaceTableViewController: UITableViewController {
     }
     
     func saveNewPlace(){
+        
+       
         var image: UIImage?
         
         if imageChaged == true {
@@ -68,7 +69,11 @@ class NewPlaceTableViewController: UITableViewController {
         } else {
             image = #imageLiteral(resourceName: "imagePlaceholder")
         }
-        newPlace = Places(name: placeNameTextFields.text!, location: placeLacationTextFields.text, type: placeTypeTextFields.text, restorantImage: nil, image: image)
+        
+        let imageData = image?.pngData()
+        let newPlace = Place(name: placeNameTextFields.text!, location: placeLacationTextFields.text, type: placeTypeTextFields.text, imageData: imageData)
+    
+        StorageManager.saveObject(newPlace)
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {

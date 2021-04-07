@@ -6,26 +6,29 @@
 //
 
 import UIKit
+import RealmSwift
+
 
 class MainTableViewController: UITableViewController {
     
-    
-    var places = Places.fillTheArray()
+    var places: Results<Place>!
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        places = realm.objects(Place.self)
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return places.count
+        return places.isEmpty ? 0 : places.count
     }
 
-    
+   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CurrentTableViewCell
@@ -35,12 +38,7 @@ class MainTableViewController: UITableViewController {
         cell.nameLabel.text = place.name
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
-        
-        if place.image == nil {
-            cell.imageOfPlace.image = UIImage(named: place.restorantImage!)
-        } else {
-            cell.imageOfPlace.image = place.image
-        }
+        cell.imageOfPlace.image = UIImage(data: place.imageData!)
             
         
         cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
@@ -48,10 +46,10 @@ class MainTableViewController: UITableViewController {
         return cell
     }
     
+    
     @IBAction func unwidSegue(_ segue:UIStoryboardSegue){
         guard let newPlaceVC = segue.source as? NewPlaceTableViewController else { return }
         newPlaceVC.saveNewPlace()
-        places.append(newPlaceVC.newPlace!)
         tableView.reloadData()
     }
     
