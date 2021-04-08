@@ -69,6 +69,7 @@
                                     <outlet property="locationLabel" destination="JAm-vX-8ZV" id="VhY-f7-9XZ"/>
                                     <outlet property="nameLabel" destination="94T-nk-8pz" id="U9f-8o-abh"/>
                                     <outlet property="typeLabel" destination="o8I-wi-oZC" id="S7W-sZ-b9u"/>
+                                    <segue destination="haR-hg-XhS" kind="show" identifier="showDetail" id="LQv-sd-bHr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -77,7 +78,7 @@
                             <outlet property="delegate" destination="fG0-Ua-lYs" id="2rM-Qo-7hz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Favorit Placies" id="Y2x-Iq-mLb">
+                    <navigationItem key="navigationItem" title="My Favorit Placies" largeTitleDisplayMode="never" id="Y2x-Iq-mLb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="j6X-G2-oKo">
                             <connections>
                                 <segue destination="Y6F-qV-mEa" kind="presentation" modalTransitionStyle="crossDissolve" id="dtS-Kt-emV"/>
@@ -89,7 +90,7 @@
             </objects>
             <point key="canvasLocation" x="-59.420289855072468" y="-126.5625"/>
         </scene>
-        <!--New Place Table View Controller-->
+        <!--New Place-->
         <scene sceneID="Vcq-l2-6M5">
             <objects>
                 <tableViewController id="haR-hg-XhS" customClass="NewPlaceTableViewController" customModule="MyFavoritePlacies" customModuleProvider="target" sceneMemberID="viewController">
@@ -234,7 +235,7 @@
                             <outlet property="delegate" destination="haR-hg-XhS" id="Lgc-bk-mTZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7MN-2L-g2j">
+                    <navigationItem key="navigationItem" title="New Place" largeTitleDisplayMode="always" id="7MN-2L-g2j">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="52X-7E-NPJ">
                             <connections>
                                 <action selector="cancelButtonAction:" destination="haR-hg-XhS" id="G6x-zq-JUj"/>
@@ -257,14 +258,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Kk-iV-9DK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="fht-Kb-ehn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1685.5072463768117" y="-127.23214285714285"/>
+            <point key="canvasLocation" x="713" y="-127"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vyE-gO-kZ4">
             <objects>
                 <navigationController id="mCB-p9-0cO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F8S-In-AQx">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="F8S-In-AQx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="24"/>
@@ -294,9 +295,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6EP-JU-Xrb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="-127"/>
+            <point key="canvasLocation" x="714" y="-914"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="TJ3-Td-cNO"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Photo" width="195" height="196"/>
         <systemColor name="systemBackgroundColor">
