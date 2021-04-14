@@ -7,9 +7,9 @@
 
 import UIKit
 
-class NewPlaceTableViewController: UITableViewController {
+  class NewPlaceTableViewController: UITableViewController {
     
-    var currentPlace: Place?
+    var currentPlace: Place!
     var imageChaged = false
     
     @IBOutlet weak var placeImage: UIImageView!
@@ -17,11 +17,12 @@ class NewPlaceTableViewController: UITableViewController {
     @IBOutlet weak var placeNameTextFields: UITextField!
     @IBOutlet weak var placeLacationTextFields: UITextField!
     @IBOutlet weak var placeTypeTextFields: UITextField!
+    @IBOutlet weak var raitingControl: RaitingControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
         saveButton.isEnabled = false
         placeNameTextFields.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         setupEditScreen()
@@ -73,12 +74,15 @@ class NewPlaceTableViewController: UITableViewController {
         }
         
         let imageData = image?.pngData()
-        let newPlace = Place(name: placeNameTextFields.text!, location: placeLacationTextFields.text, type: placeTypeTextFields.text, imageData: imageData)
+        let newPlace = Place(name: placeNameTextFields.text!, location: placeLacationTextFields.text, type: placeTypeTextFields.text, imageData: imageData, raiting: Double(raitingControl.raiting))
         if currentPlace != nil {
+            try! realm.write{
             currentPlace?.imageData = newPlace.imageData
             currentPlace?.location = newPlace.location
             currentPlace?.type = newPlace.type
             currentPlace?.name = newPlace.name
+            currentPlace?.raiting = newPlace.raiting
+            }
         } else {
             StorageManager.saveObject(newPlace)
         }
@@ -95,6 +99,7 @@ class NewPlaceTableViewController: UITableViewController {
             placeNameTextFields.text = currentPlace?.name
             placeLacationTextFields.text = currentPlace?.location
             placeTypeTextFields.text = currentPlace?.type
+            raitingControl.raiting = Int(currentPlace.raiting)
         }
     }
     

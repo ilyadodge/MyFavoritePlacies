@@ -18,6 +18,7 @@
 		D16AD106261DB010007CBD54 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16AD105261DB010007CBD54 /* StorageManager.swift */; };
 		D16AD10B261DE86F007CBD54 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D16AD10A261DE86F007CBD54 /* Realm */; };
 		D16AD10D261DE86F007CBD54 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D16AD10C261DE86F007CBD54 /* RealmSwift */; };
+		D16AD110262400F5007CBD54 /* RaitingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16AD10F262400F5007CBD54 /* RaitingControl.swift */; };
 		D1E2B3DC261AA43100762C4E /* NewPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E2B3DB261AA43100762C4E /* NewPlaceTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		D14AC790260B8D680095B736 /* CurrentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTableViewCell.swift; sourceTree = "<group>"; };
 		D14AC793260CE82B0095B736 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		D16AD105261DB010007CBD54 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		D16AD10F262400F5007CBD54 /* RaitingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaitingControl.swift; sourceTree = "<group>"; };
 		D1E2B3DB261AA43100762C4E /* NewPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 				D14AC793260CE82B0095B736 /* PlaceModel.swift */,
 				D16AD105261DB010007CBD54 /* StorageManager.swift */,
 				D14AC790260B8D680095B736 /* CurrentTableViewCell.swift */,
+				D16AD10F262400F5007CBD54 /* RaitingControl.swift */,
 				D14AC780260B78D70095B736 /* Assets.xcassets */,
 				D14AC782260B78D70095B736 /* LaunchScreen.storyboard */,
 				D14AC785260B78D70095B736 /* Info.plist */,
@@ -166,6 +169,7 @@
 				D16AD106261DB010007CBD54 /* StorageManager.swift in Sources */,
 				D14AC794260CE82B0095B736 /* PlaceModel.swift in Sources */,
 				D14AC77A260B78D60095B736 /* SceneDelegate.swift in Sources */,
+				D16AD110262400F5007CBD54 /* RaitingControl.swift in Sources */,
 				D14AC791260B8D680095B736 /* CurrentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
